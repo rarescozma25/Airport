@@ -1,0 +1,97 @@
+/* Stilizare generală pentru tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+/* Stilizare pentru butoane */
+button {
+    padding: 8px 15px;
+    margin: 5px 0;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Stilizare pentru input de cantitate */
+input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+/* Stilizare pentru totalul cantității de bilete */
+p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: right;
+    margin-right: 30px;
+}
+
+#total_bilete {
+    color: #4CAF50;
+}
+
+/* Stilizare pentru paginarea zborurilor */
+div {
+    text-align: center;
+    margin-top: 20px;
+}
+
+div a {
+    padding: 5px 10px;
+    margin: 0 5px;
+    text-decoration: none;
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+    border-radius: 4px;
+}
+
+div a:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#btn_sterge_cos_virtual {
+    padding: 10px 20px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#btn_sterge_cos_virtual:hover {
+    background-color: darkred;
+}

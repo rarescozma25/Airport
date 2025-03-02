@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Lista Avioane</title>
+    </head>
+    <body>
+        <h1>Detalii Avion</h1>
+<p>Nume: {{ aeronave.0.nume }}</p>
+<p>Capacitate: {{ aeronave.0.capacitate }}</p>
+<p>An fabricație: {{ aeronave.0.an_fabricatie }}</p>
+<p>Disponibilitate: {% if aeronave.0.disponibilitate %}Disponibil{% else %}Indisponibil{% endif %}</p>
+
+        <h1>Lista Avioane</h1>
+        <table border="1">
+            <tr>
+                <th>ID</th>
+                <th>Nume</th>
+                <th>Capacitate</th>
+                <th>An Fabricatie</th>
+                <th>Disponibilitate</th>
+            </tr>
+            {% for avion in aeronave %}
+            <tr>
+                <td>{{ avion.id_aeronava }}</td>
+                <td>{{ avion.nume }}</td>
+                <td>{{ avion.capacitate }}</td>
+                <td>{{ avion.an_fabricatie }}</td>
+                <td>Disponibilitate: {% if aeronave.0.disponibilitate %}Disponibil{% else %}Indisponibil{% endif %}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+    </html>

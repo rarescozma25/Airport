@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logări suspecte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 20px;
+        }
+        h1 {
+            color: red;
+            text-align: center;
+        }
+        .message {
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .message p {
+            font-size: 16px;
+        }
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #888;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Logări suspecte</h1>
+
+    <div class="message">
+        <p><strong>Username:</strong> {{ username }}</p>
+        <p><strong>IP:</strong> {{ ip }}</p>
+        <p>Au fost cel puțin 3 încercări de logare eșuate pentru acest utilizator în ultimele 2 minute.</p>
+    </div>
+
+    <div class="footer">
+        <p>Acesta este un mesaj automat trimis de sistemul nostru. Vă rugăm să nu răspundeți direct la acest email.</p>
+    </div>
+</body>
+</html>

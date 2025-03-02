@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista Bilete de Avion</title>
+</head>
+<body>
+    <h1>Lista Bilete de Avion</h1>
+
+
+    <table border="1">
+        <tr>
+            <th>Nume Prenume</th>
+            <th>Zbor</th>
+            <th>Preț</th>
+            <th>Loc</th>
+        </tr>
+        {% for bilet in bilete %}
+        <tr>
+            <td>{{ bilet.nume_prenume }}</td>
+            <td>{{ bilet.zbor }}</td>
+            <td>{{ bilet.pret }}</td>
+            <td>{{ bilet.loc }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <!-- Paginare -->
+    <div>
+        <span>Pagini:</span>
+        {% if bilete.has_previous %}
+            <a href="?page=1">Prima</a>
+            <a href="?page={{ bilete.previous_page_number }}">Înapoi</a>
+        {% endif %}
+
+        <span>Pagina {{ bilete.number }} din {{ bilete.paginator.num_pages }}</span>
+
+        {% if bilete.has_next %}
+            <a href="?page={{ bilete.next_page_number }}">Înainte</a>
+            <a href="?page={{ bilete.paginator.num_pages }}">Ultima</a>
+        {% endif %}
+    </div>
+</body>
+</html>
