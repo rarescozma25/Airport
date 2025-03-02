@@ -192,19 +192,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'OPTIONS': {
-                'options': '-c search_path=django,public'
-        },
-        'NAME': 'rares',   # numele bazei de date
-        'USER': 'rares',      # username pt conexiunea la baza de date
-        'PASSWORD': 'parola',
-        'HOST': 'localhost',  # sau IP-ul serverului
-        'PORT': '5432',       # portul implicit pentru PostgreSQL
-    }
-}
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
