@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promoție: {{ promotie.nume }}</title>
+</head>
+<body>
+    <h1>Salut, {{ utilizator.username }}!</h1>
+    <p>Ai dreptul la o promoție pentru zborurile către {{ promotie.destinatie }}!</p>
+    <p>Promoția {{ promotie.nume }} este valabilă până la {{ promotie.data_expirare }}.</p>
+    <p>Reducerea aplicată este de {{ promotie.procent_reducere }}%!</p>
+    <p>Nu rata această oportunitate!</p>
+</body>
+</html>

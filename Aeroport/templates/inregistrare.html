@@ -1,0 +1,56 @@
+{%load static%}
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}">
+<form method="post">
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    
+    <div>
+        {{ form.username.label_tag }} {{ form.username }}
+        {{ form.username.errors }}
+    </div>
+    <div>
+        {{ form.email.label_tag }} {{ form.email }}
+        {{ form.email.errors }}
+    </div>
+    <div>
+        {{ form.telefon.label_tag }} {{ form.telefon }}
+        {{ form.telefon.errors }}
+    </div>
+    <div>
+        {{ form.password1.label_tag }} {{ form.password1 }}
+        {{ form.password1.errors }}
+    </div>
+    <div>
+        {{ form.password2.label_tag }} {{ form.password2 }}
+        {{ form.password2.errors }}
+    </div>
+    <div>
+        {{ form.data_nastere.label_tag }} {{ form.data_nastere }}
+        {{ form.data_nastere.errors }}
+    </div>
+    <div>
+        {{ form.oras.label_tag }} {{ form.oras }}
+        {{ form.oras.errors }}
+    </div>
+    <div>
+        {{ form.tara.label_tag }} {{ form.tara }}
+        {{ form.tara.errors }}
+    </div>
+    <div>
+        {{ form.cod_postal.label_tag }} {{ form.cod_postal }}
+        {{ form.cod_postal.errors }}
+    </div>
+    
+    <button type="submit">Register</button>
+</form>
+

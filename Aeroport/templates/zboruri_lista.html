@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista Zboruri</title>
+    <script type="text/javascript" src="{% static 'js/lista_zboruri.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/lista_zboruri.css' %}">
+
+</head>
+<body>
+    <h1>Lista Zboruri</h1>
+
+    <table border="1">
+        <tr>
+            <th>Plecare</th>
+            <th>Destinație</th>
+            <th>Data Plecare</th>
+            <th>Ora Plecare</th>
+            <th>Data Sosire</th>
+            <th>Ora Sosire</th>
+            <th>Actiuni</th>
+            <th>Cate zboruri vrei sa adaugi?</th>
+            <p>Total cantitate bilete: <span id="total_bilete">0</span></p>   
+            
+        </tr>
+        {% for zbor in zboruri %}
+        <tr data-id="{{ zbor.id_zbor }}" class="produs">
+            <td>{{ zbor.plecare }}</td>
+            <td>{{ zbor.destinatie }}</td>
+            <td>{{ zbor.data_plecare }}</td>
+            <td>{{ zbor.ora_plecare }}</td>
+            <td>{{ zbor.data_sosire }}</td>
+            <td>{{ zbor.ora_sosire }}</td>
+            <td>
+                <!-- Butoane pentru adăugare și scădere -->
+                <button data-id="{{ zbor.id_zbor }}" data-capacitate="{{ zbor.aeronava.capacitate }}" class="btn_cos_virtual">Adauga</button>
+                <button data-id="{{ zbor.id_zbor }}" class="btn_scade">Scade</button>
+            </td>
+            <td>
+                <input 
+                    type="number" 
+                    class="cantitate_bilete" 
+                    data-id="{{zbor.id_zbor}}" 
+                    value="0" 
+                    min="0" 
+                    max="{{ zbor.aeronava.capacitate }}" 
+                />
+                <button class="btn_confirm" data-id="{{ zbor.id_zbor }}">Confirma</button>
+            </td>
+        </tr>
+        
+        {% endfor %}
+        
+    </table>
+
+
+    <button id="btn_sterge_cos_virtual">Goleste coșul</button>
+    <a id="btn_afiseaza_cos_virtual" href="{% url 'cos_virtual' %}">
+        <button>Afiseaza Cosul Virtual</button>
+    </a>
+
+
+    <div>
+        <span>Pagini:</span>
+        {% if zboruri.has_previous %}
+            <a href="?page=1">Prima</a>
+            <a href="?page={{ zboruri.previous_page_number }}">Înapoi</a>
+        {% endif %}
+
+        <span>Pagina {{ zboruri.number }} din {{ zboruri.paginator.num_pages }}</span>
+
+        {% if zboruri.has_next %}
+            <a href="?page={{ zboruri.next_page_number }}">Înainte</a>
+            <a href="?page={{ zboruri.paginator.num_pages }}">Ultima</a>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <title>Pagina principală</title>
+</head>
+<body>
+    <h1>Bine ai venit, {{ user_data.username }}!</h1>
+    <p>Email: {{ user_data.email }}</p>
+    <p>Telefon: {{ user_data.telefon }}</p>
+    <p>Oraș: {{ user_data.oras }}</p>
+    <p>Țara: {{ user_data.tara }}</p>
+    <p>Cod poștal: {{ user_data.cod_postal }}</p>
+    <p>Data nașterii: {{ user_data.data_nastere }}</p>
+    <a href="{% url 'cauta_zboruri' %}"><button>Căutare Zboruri</button></a>
+    <a href="{% url 'zboruri' %}">
+        <button>Cumpără Zboruri</button>
+    </a>
+    <form action="{% url 'logout' %}" method="POST">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+
+    <form action="{% url 'schimba_parola' %}" method="GET">
+        <button type="submit">Schimbă parola</button>
+    </form>
+
+
+
+
+</body>
+</html>
