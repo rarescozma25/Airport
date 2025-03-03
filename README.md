@@ -1,6 +1,6 @@
-# Airport Management System
+# Flight schedule and booking
 
-Welcome to the Airport Management System – a sophisticated **Django** application engineered to replicate the complex operations of a modern airport. This project exemplifies advanced web development practices by integrating a robust backend with an intuitive, user-centric interface. Utilizing a highly secure **PostgreSQL** database, all essential data—from user profiles to flight schedules and ticket reservations—is meticulously managed and safeguarded.
+Welcome to the Flight schedule and booking – a sophisticated **Django** application engineered to replicate the complex operations of a modern airport. This project exemplifies advanced web development practices by integrating a robust backend with an intuitive, user-centric interface. Utilizing a highly secure **PostgreSQL** database, all essential data—from user profiles to flight schedules and ticket reservations—is meticulously managed and safeguarded.
 
 ---
 
